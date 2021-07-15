@@ -1,0 +1,14 @@
+{
+    "displayName" : "WMI Product List",
+    "author" : ["Antoine ROBIN"],
+    "contributor" : ["Gilles DUBOIS", "Charlène AUGER"],
+    "supportedAgent" : ["Windows"],
+    "version" : "1.0",
+    "licence" : "GPLv2",
+    "description" : 
+        {
+            "en" : "WMI Product List",
+            "fr" : "Liste des produits WMI"
+        }
+}
+    
