@@ -31,24 +31,34 @@ $tab_options = $protectedPost;
 $tab_options['form_name'] = $form_name;
 $tab_options['table_name'] = $table_name;
 
-
 echo open_form($form_name);
+
 $list_fields = array(
-    'Name' => 'NAME'
+    $l->g(49) => 'NAME',
+    $l->g(69) => 'VENDOR',
+    $l->g(277) => 'VERSION',
+    $l->g(79701) => 'INSTALLSTATE',
+    $l->g(1238) => 'INSTALLDATE'
 );
+
 $list_col_cant_del = $list_fields;
 $default_fields = $list_fields;
 
+$list_fields[$l->g(1453)] = 'IDENTIFNUM';
+$list_fields[$l->g(1467)] = 'HELPLINK';
+$list_fields[$l->g(1248)] = 'INSTALLSOURCE';
+
 $sql = prepare_sql_tab($list_fields);
+
 $sql['SQL']  .= "FROM $table_name WHERE (hardware_id = $systemid)";
 
 array_push($sql['ARG'], $systemid);
 $tab_options['ARG_SQL'] = $sql['ARG'];
 $tab_options['ARG_SQL_COUNT'] = $systemid;
+
 ajaxtab_entete_fixe($list_fields, $default_fields, $tab_options, $list_col_cant_del);
 
 echo close_form();
-
 
 if ($ajax) {
     ob_end_clean();

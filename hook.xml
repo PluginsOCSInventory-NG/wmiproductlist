@@ -7,7 +7,7 @@
     <hook type="cdentry">
         <identifier>cd_wmiproductlist</identifier>
         <translation>79700</translation>
-        <category>other</category>
+        <category>software</category>
         <available>wmiproductlist</available>
     </hook>
 </hookstore>
