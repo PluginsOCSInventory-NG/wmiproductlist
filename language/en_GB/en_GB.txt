@@ -1,1 +1,2 @@
 79700 wmi Product List
+79701 State
