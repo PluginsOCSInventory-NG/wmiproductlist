@@ -34,11 +34,19 @@ $tab_options['table_name'] = $table_name;
 echo open_form($form_name);
 
 $list_fields = array(
-    'Name' => 'NAME'
+    $l->g(49) => 'NAME',
+    $l->g(69) => 'VENDOR',
+    $l->g(277) => 'VERSION',
+    $l->g(79701) => 'INSTALLSTATE',
+    $l->g(1238) => 'INSTALLDATE'
 );
 
 $list_col_cant_del = $list_fields;
 $default_fields = $list_fields;
+
+$list_fields[$l->g(1453)] = 'IDENTIFNUM';
+$list_fields[$l->g(1467)] = 'HELPLINK';
+$list_fields[$l->g(1248)] = 'INSTALLSOURCE';
 
 $sql = prepare_sql_tab($list_fields);
 
