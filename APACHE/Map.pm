@@ -22,7 +22,14 @@ $DATA_MAP{wmiproductlist} = {
    writeDiff => 0,
    cache => 0,
    fields => {
-       NAME => {}
+       NAME => {},
+       VENDOR => {},
+       VERSION => {},
+       INSTALLSTATE => {},
+       INSTALLDATE => {},
+       IDENTIFNUM => {},
+       HELPLINK => {},
+       INSTALLSOURCE => {}
    }
 };
 1;
