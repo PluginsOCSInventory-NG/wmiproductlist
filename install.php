@@ -15,7 +15,7 @@ function extension_install_wmiproductlist()
 
     $commonObject -> sqlQuery(
         "CREATE TABLE `wmiproductlist` (
-        `ID` INTEGER NOT NULL AUTO_INCREMENT, 
+        `ID` BIGINT NOT NULL AUTO_INCREMENT, 
         `HARDWARE_ID` INTEGER NOT NULL,
         `NAME` VARCHAR(255) DEFAULT NULL,
         `VENDOR` VARCHAR(255) DEFAULT NULL,
