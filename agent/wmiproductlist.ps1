@@ -38,16 +38,18 @@ $wmicObjects = Get-WmiObject Win32_product | Select-Object Name, Vendor, Version
 $xml = ""
 
 foreach ($wmicObject in $wmicObjects) {
-    $xml += "<WMIPRODUCTLIST>`n"
-    $xml += "<NAME>"+ $wmicObject.Name +"</NAME>`n"
-    $xml += "<VENDOR>"+ $wmicObject.Vendor +"</VENDOR>`n"
-    $xml += "<VERSION>"+ $wmicObject.Version +"</VERSION>`n"
-    $xml += "<INSTALLSTATE>"+ $wmicObject.InstallState +"</INSTALLSTATE>`n"
-    $xml += "<INSTALLDATE>"+ $wmicObject.InstallDate +"</INSTALLDATE>`n"
-    $xml += "<IDENTIFNUM>"+ $wmicObject.IdentifyingNumber +"</IDENTIFNUM>`n"
-    $xml += "<HELPLINK>"+ $wmicObject.HelpLink +"</HELPLINK>`n"
-    $xml += "<INSTALLSOURCE>"+ $wmicObject.InstallSource +"</INSTALLSOURCE>`n"
-    $xml += "</WMIPRODUCTLIST>`n"
+    if($wmicObject.Name) {
+        $xml += "<WMIPRODUCTLIST>`n"
+        $xml += "<NAME>"+ $wmicObject.Name +"</NAME>`n"
+        $xml += "<VENDOR>"+ $wmicObject.Vendor +"</VENDOR>`n"
+        $xml += "<VERSION>"+ $wmicObject.Version +"</VERSION>`n"
+        $xml += "<INSTALLSTATE>"+ $wmicObject.InstallState +"</INSTALLSTATE>`n"
+        $xml += "<INSTALLDATE>"+ $wmicObject.InstallDate +"</INSTALLDATE>`n"
+        $xml += "<IDENTIFNUM>"+ $wmicObject.IdentifyingNumber +"</IDENTIFNUM>`n"
+        $xml += "<HELPLINK>"+ $wmicObject.HelpLink +"</HELPLINK>`n"
+        $xml += "<INSTALLSOURCE>"+ $wmicObject.InstallSource +"</INSTALLSOURCE>`n"
+        $xml += "</WMIPRODUCTLIST>`n"
+    }
 }
 
 if($xml -eq "") {
